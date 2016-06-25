@@ -109,11 +109,16 @@ class ViewController: UIViewController {
         if a == 3 {
             if numberArray[a-2] == "0" && numberArray[a-1] == "0" { countBar.text = "\(countArray[a-3]) Trăm" }       //200
             else { if numberArray[a-2] == "0" { countBar.text = "\(countArray[a-3]) Trăm Lẻ \(countArray[a-1])" }
-            else {if numberArray[a-2] == "1" { if numberArray[a-1] == "5" {
+            else {if numberArray[a-2] == "1"
+                { if numberArray[a-1] == "5" {
                 countBar.text = "\(countArray[a-3]) Trăm Mười Lăm"                              //115
-            }
+                }
+                else { if numberArray[a-1] == "0" {
+                    countBar.text = "\(countArray[a-3]) Trăm Mười"                              //115
+                    }
+
             else {countBar.text = "\(countArray[a-3]) Trăm Mười \(countArray[a-1])" }         //312
-            }
+                    } }
             else {
             if numberArray[a-1] == "0" {
                 countBar.text = "\(countArray[a-3]) Trăm \(countArray[a-2]) Mươi"           //220
@@ -137,11 +142,13 @@ class ViewController: UIViewController {
             if numberArray[a-3] == "0" && numberArray[a-2] == "0" && numberArray[a-1] == "0" {countBar.text = "\(countArray[a-4]) Nghìn" }
                 else { if numberArray[a-2] == "0" && numberArray[a-1] == "0" { countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm" }       //2000
             else { if numberArray[a-2] == "0" { countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm Lẻ \(countArray[a-1])" }     //2104
-            else {if numberArray[a-2] == "1" { if numberArray[a-1] == "5" {
+            else {if numberArray[a-2] == "1"
+                { if numberArray[a-1] == "5" {
                 countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm Mười Lăm"                              //2115
                 }
-            else {countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm Mười \(countArray[a-1])" }         //4312
-            }
+                else { if numberArray[a-1] == "0" {countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm Mười"}
+                else {countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm Mười \(countArray[a-1])" }         //4312
+                    } }
             else {
                 if numberArray[a-1] == "0" {
                     countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm \(countArray[a-2]) Mươi"           //2220
