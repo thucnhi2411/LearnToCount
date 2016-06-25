@@ -95,14 +95,20 @@ class ViewController: UIViewController {
                     else { if numberArray[a-1] == "5" {
                         countBar.text = "\(countArray[a-2]) Mươi Lăm" }     //25
                     else {
-                        countBar.text = "\(countArray[a-2]) Mươi \(countArray[a-1])" } }      //52
+                        if numberArray[a-1] == "1" {
+                            countBar.text = "\(countArray[a-2]) Mươi Mốt"
+                        }
+                        else {
+                            countBar.text = "\(countArray[a-2]) Mươi \(countArray[a-1])" } }      //52
+                        }
+                    
                 }
             }
         }
        
         if a == 3 {
             if numberArray[a-2] == "0" && numberArray[a-1] == "0" { countBar.text = "\(countArray[a-3]) Trăm" }       //200
-            else { if numberArray[a-2] == "0" { countBar.text = "\(countArray[a-3]) Trăm Lẻ \(numberArray[a-1])" }
+            else { if numberArray[a-2] == "0" { countBar.text = "\(countArray[a-3]) Trăm Lẻ \(countArray[a-1])" }
             else {if numberArray[a-2] == "1" { if numberArray[a-1] == "5" {
                 countBar.text = "\(countArray[a-3]) Trăm Mười Lăm"                              //115
             }
@@ -114,10 +120,50 @@ class ViewController: UIViewController {
             }
             else { if numberArray[a-1] == "5" {
                 countBar.text = "\(countArray[a-3]) Trăm \(countArray[a-2]) Mươi Lăm" }     //225
-            else {
-                countBar.text = "\(countArray[a-3]) Trăm \(countArray[a-2]) Mươi \(countArray[a-1])" } }      //352
+                else
+                if numberArray[a-1] == "1" {
+                    countBar.text = "\(countArray[a-3]) Trăm \(countArray[a-2]) Mươi Mốt"
+                }
+                else {
+                    countBar.text = "\(countArray[a-3]) Trăm \(countArray[a-2]) Mươi \(countArray[a-1])" } }      //352
+            
+                }
                 } }
     
-            } }
+        }
+
+        
+        if a == 4 {
+            if numberArray[a-3] == "0" && numberArray[a-2] == "0" && numberArray[a-1] == "0" {countBar.text = "\(countArray[a-4]) Nghìn" }
+                else { if numberArray[a-2] == "0" && numberArray[a-1] == "0" { countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm" }       //2000
+            else { if numberArray[a-2] == "0" { countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm Lẻ \(countArray[a-1])" }     //2104
+            else {if numberArray[a-2] == "1" { if numberArray[a-1] == "5" {
+                countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm Mười Lăm"                              //2115
+                }
+            else {countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm Mười \(countArray[a-1])" }         //4312
+            }
+            else {
+                if numberArray[a-1] == "0" {
+                    countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm \(countArray[a-2]) Mươi"           //2220
+                }
+                else { if numberArray[a-1] == "5" {
+                    countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm \(countArray[a-2]) Mươi Lăm" }     //225
+                else
+                    if numberArray[a-1] == "1" {
+                        countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm \(countArray[a-2]) Mươi Mốt"
+                    }
+                    else {
+                        countBar.text = "\(countArray[a-4]) Nghìn \(countArray[a-3]) Trăm \(countArray[a-2]) Mươi \(countArray[a-1])" }      //35
+                } }
+                }
+                }
+            }
+        }
+        
+        if a > 4 {
+            countBar.text = "Well Learning! Try to review the previous lesson!"
     }
+    
+    }
+    
 }
